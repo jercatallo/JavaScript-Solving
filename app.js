@@ -15,9 +15,7 @@ function addBinary(a,b) {
         remainderHolder = sum % 2;
         sum /= 2;
         result += Math.floor(remainderHolder);
-        if(result.length == 4 ){
-            result += " ";
-        }
+     
     }
 
     for(let i = result.length -1 ; i >= 0;i-- ){
