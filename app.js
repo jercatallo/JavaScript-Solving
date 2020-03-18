@@ -1,32 +1,21 @@
-//Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
+//Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+//Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
 
-//Problem Link - https://www.codewars.com/kata/551f37452ff852b7bd000139/train/javascript
-
-
-
-
-function addBinary(a,b) {
-    let sum = a + b;
-    let remainderHolder = "",result = "",finalResult = "";
-    
-
-    while(sum >= 1){
-        let i =0;
-        remainderHolder = sum % 2;
-        sum /= 2;
-        result += Math.floor(remainderHolder);
-     
-    }
-
-    for(let i = result.length -1 ; i >= 0;i-- ){
-        finalResult += result[i]
-    }
-
-    
-
-    console.log(finalResult);
-}
+//Problem Link - https://www.codewars.com/kata/578553c3a1b8d5c40300037c/train/javascript
 
 
+const binaryArrayToNumber = arr => {
 
-addBinary(100,100);
+ let holder  = "";
+
+
+ arr.forEach(binary => {
+     holder += binary;
+ });
+
+return parseInt(holder,2);
+
+};
+
+
+binaryArrayToNumber([1,1,1,1])
