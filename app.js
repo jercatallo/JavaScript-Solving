@@ -1,21 +1,23 @@
-//Given an array of ones and zeroes, convert the equivalent binary value to an integer.
-//Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+//Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen. Instead, we mask it.
+//Your task is to write a function maskify, which changes all but the last four characters into '#'.
 
-//Problem Link - https://www.codewars.com/kata/578553c3a1b8d5c40300037c/train/javascript
-
-
-const binaryArrayToNumber = arr => {
-
- let holder  = "";
+//Problem Link - https://www.codewars.com/kata/5412509bd436bd33920011bc/train/javascript
 
 
- arr.forEach(binary => {
-     holder += binary;
- });
 
-return parseInt(holder,2);
+function maskify(cc) {
+let mask= "";
+let j = cc;
+for(let i = 0; i <cc.length;i++){
+    if(i<cc.length -4){
+        mask += '#';
+    } else{
+        mask += j[i];
+    }
 
-};
+}
+    console.log(mask);
+}
 
 
-binaryArrayToNumber([1,1,1,1])
+maskify('4556364607935616');
