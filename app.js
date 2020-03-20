@@ -8,7 +8,7 @@
 
 
 var isSquare = function(n){
-    if(Math.sqrt(n) % 2 == 0){
+    if(Number.isInteger(Math.sqrt(n))){
         return true;
     } else{
         return false
@@ -16,4 +16,4 @@ var isSquare = function(n){
   }
 
 
-  console.log(isSquare(26))
+  console.log(isSquare(25))
