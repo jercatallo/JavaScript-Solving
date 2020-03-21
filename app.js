@@ -13,7 +13,7 @@ let sum = 0;
        sum += Math.pow(parseInt(value.toString()[i]),value.toString().length);
     }
 
-   console.log((sum === value ? true : false)) ;
+   return (sum === value ? true : false);
  
   }
 
