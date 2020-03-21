@@ -1,19 +1,25 @@
-//A square of squares
+//Does my number look big in this?
 
-//You like building blocks. You especially like building blocks that are squares. And what you even like more, is to arrange them into a square of square building blocks!
-//However, sometimes, you can't arrange them into a square. Instead, you end up with an ordinary rectangle! Those blasted things! If you just had a way to know, whether you're currently working in vain… Wait! That's it! You just have to check if your number of building blocks is a perfect square.
+//A Narcissistic Number is a number which is the sum of its own digits, each raised to the power of the number of digits in a given base. In this Kata, we will restrict ourselves to decimal (base 10).
 
-//Problem Link - https://www.codewars.com/kata/54c27a33fb7da0db0100040e/train/javascript
-
+//Problem Link - https://www.codewars.com/kata/5287e858c6b5a9678200083c/train/javascript
 
 
-var isSquare = function(n){
-    if(Number.isInteger(Math.sqrt(n))){
-        return true;
-    } else{
-        return false
+
+function narcissistic(value) {
+let sum = 0;
+
+    for(let i =0; i< value.toString().length;i++){
+       sum += Math.pow(parseInt(value.toString()[i]),value.toString().length);
     }
+
+   console.log((sum === value ? true : false)) ;
+ 
   }
 
 
-  console.log(isSquare(25))
+ 
+
+
+
+  narcissistic(1634);
