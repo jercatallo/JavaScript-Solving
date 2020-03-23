@@ -6,20 +6,32 @@
 
 
 
-function narcissistic(value) {
-let sum = 0;
-
-    for(let i =0; i< value.toString().length;i++){
-       sum += Math.pow(parseInt(value.toString()[i]),value.toString().length);
-    }
-
-   return (sum === value ? true : false);
- 
+function quarantine(value) {
+   var primes = [];
+   for (var i = 2; i <= value; i++) {
+      var prime = false;
+      for (var j = 2; j<= i; j++) {
+          if (i%j===0 && j!==i) {
+              prime = true;
+          }
+      }
+      if (prime === false) {
+                 primes.push(i);
+      }
+  }
+  for(let i =0; i< primes.length ;i++){
+     for(let j=0; j<primes.length;j++){
+        if((primes[i] + primes[j]) == value && primes[i] <= value /2 ){
+         console.log(primes[i] + "+" + primes[j] + "=" + value )
+      }
+        }
+     
   }
 
+  }
 
+ 
  
 
 
-
-  narcissistic(1634);
+ quarantine(100);
