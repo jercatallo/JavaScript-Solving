@@ -1,37 +1,33 @@
-//Does my number look big in this?
+//IQ Test
 
-//A Narcissistic Number is a number which is the sum of its own digits, each raised to the power of the number of digits in a given base. In this Kata, we will restrict ourselves to decimal (base 10).
+//Bob is preparing to pass IQ test. The most frequent task in this test is to find out which one of the given numbers differs from the others. Bob observed that one number usually differs from the others in evenness. Help Bob — to check his answers, he needs a program that among the given numbers finds one that is different in evenness, and return a position of this number.
 
-//Problem Link - https://www.codewars.com/kata/5287e858c6b5a9678200083c/train/javascript
+//Problem Link - https://www.codewars.com/kata/552c028c030765286c00007d/train/javascript
 
 
 
-function quarantine(value) {
-   var primes = [];
-   for (var i = 2; i <= value; i++) {
-      var prime = false;
-      for (var j = 2; j<= i; j++) {
-          if (i%j===0 && j!==i) {
-              prime = true;
-          }
-      }
-      if (prime === false) {
-                 primes.push(i);
-      }
-  }
-  for(let i =0; i< primes.length ;i++){
-     for(let j=0; j<primes.length;j++){
-        if((primes[i] + primes[j]) == value && primes[i] <= value /2 ){
-         console.log(primes[i] + "+" + primes[j] + "=" + value )
-      }
+function iqTest(numbers){
+
+let odd = 0, even = 0, oddPosition = "",evenPosition = "";
+let num = numbers.split(" ");
+
+    for(let i =0 ;i<num.length;i++){
+        if(num[i] % 2 == 0){
+           even++;
+            evenPosition += i + 1;
+        } else{
+            odd++;  
+            oddPosition += i + 1;
         }
-     
-  }
+    }
+
+    
+  
+  
+console.log((even < odd ? parseInt(evenPosition) :  parseInt(oddPosition))) ;
 
   }
 
- 
- 
 
 
- quarantine(100);
+  iqTest("1 2 1 1");
