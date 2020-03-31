@@ -1,13 +1,9 @@
-//Number of Decimal Digits
+//First non-repeating character
 
-//Problem Link - https://www.codewars.com/kata/58fa273ca6d84c158e000052/train/javascript
+//Problem Link - https://www.codewars.com/kata/52bc74d4ac05d0945d00054e/train/javascript
 
-
-function digits(n) {
-
-   for(var numberOfDigits = 0;numberOfDigits < n.toString().length; numberOfDigits++){
-   }
-return numberOfDigits
+function firstNonRepeatingLetter(s) {
+   console.log(s)
  }
 
- digits(45296);
+ firstNonRepeatingLetter("bllockk");
