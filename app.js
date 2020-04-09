@@ -15,67 +15,28 @@ function SnakesLadders() {
 
 };
 
+
 SnakesLadders.prototype.play = function(die1, die2) {
+
+
+ 
+
+
   //Rolling the Dice
   var playerRoll = 0;
   playerRoll += die1 + die2;
   if(turn == true){
     var player1Status = "";
     player1 += playerRoll;
-    player1Status += "Player 1 is on square " + player1;
-      //To Reroll the dice if their value is the same
-    if(die1 == die2){
-      turn = true;
-  
-    }else{
-      turn = false;
-    }
-    console.log(player1Status);
-    //return player1Status;
-   
-  }else{
-    var player2Status = "";
-    player2 += playerRoll;
-    player2Status += "Player 2 is on square " + player2;
+      //To bounce back if it is greater than 100
+    if(player1 > 100){
+      surplus += player1 - 100;
+      var bounce = surplus * 2;
+      player1 -= bounce;
+      surplus = 0 ;
     
-      //To Reroll the dice if their value is the same
-    if(die1 == die2){
-      turn = false;
-    }else{
-      turn = true;
-    }
-    console.log(player2Status);
-     //return player2Status;
-
-  }
-
-  if(player1 == 100){
-    winner += "Player 1 Wins!";
-    console.log(winner);
-    //return winner;
-  }
-  if(player2 == 100){
-    winner += "Player 2 Wins!";
-    console.log(winner);
-   //return winner;
-  }
-
-
-  //To Revert the value of the dice
-  playerRoll = 0;
- 
-}
-
-
-while(player1 < 100 || player2 < 100){
-
-  var die1Random = Math.round(Math.random() * 6);
-  var die2Random = Math.round(Math.random() * 6);
-  game.play(die1Random,die2Random);
-
-  //Snakes and Ladders Points
-  if(turn == true){
-    switch(player1){
+     }
+     switch(player1){
       //For Ladders
       case 2:
         player1 = 38;
@@ -139,8 +100,29 @@ while(player1 < 100 || player2 < 100){
         player1 = 80;
       break;
     }
-  }else if(turn == false){
-    switch(player2){
+  
+    player1Status += "Player 1 is on square " + player1;
+      //To Reroll the dice if their value is the same
+    if(die1 == die2){
+      turn = true;
+  
+    }else{
+      turn = false;
+    }
+    console.log(player1Status);
+    //return player1Status;
+   
+  }else{
+    var player2Status = "";
+    player2 += playerRoll;
+      //To bounce back if it is greater than 100
+    if(player2 > 100){
+      surplus += player2 - 100;
+      var bounce = surplus * 2;
+      player2 -= bounce;
+      surplus = 0 ;
+     }
+     switch(player2){
       //For Ladders
       case 2:
         player2 = 38;
@@ -204,27 +186,46 @@ while(player1 < 100 || player2 < 100){
         player2 = 80;
       break;
     }
-  }
-
-
   
+    player2Status += "Player 2 is on square " + player2;
+    
+      //To Reroll the dice if their value is the same
+    if(die1 == die2){
+      turn = false;
+    }else{
+      turn = true;
+    }
+    console.log(player2Status);
+     //return player2Status;
 
-
-  //To bounce back if it is greater than 100
-  if(player1 > 100){
-   surplus += player1 - 100;
-   var bounce = surplus * 2;
-   player1 -= bounce;
-   surplus = 0 ;
- 
   }
 
-  if(player2 > 100){
-    surplus += player2 - 100;
-    var bounce = surplus * 2;
-    player2 -= bounce;
-    surplus = 0 ;
-   }
+  if(player1 == 100){
+    winner += "Player 1 Wins!";
+    console.log(winner);
+    //return winner;
+  }
+  if(player2 == 100){
+    winner += "Player 2 Wins!";
+    console.log(winner);
+   //return winner;
+  }
+
+
+  //To Revert the value of the dice
+  playerRoll = 0;
+ 
+}
+
+
+while(player1 < 100 || player2 < 100){
+
+  var die1Random = Math.round(Math.random() * 6);
+  var die2Random = Math.round(Math.random() * 6);
+  game.play(die1Random,die2Random);
+
+  //Snakes and Ladders Points
+
 
   if(player1 == 100){
     break;
