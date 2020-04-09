@@ -1,24 +1,50 @@
-//Break camelCase
+//Rot13
 
-//Problem Link - https://www.codewars.com/kata/5208f99aee097e6552000148/train/javascript
+//Problem Link - https://www.codewars.com/kata/530e15517bc88ac656000716/train/javascript
+
+var letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
 
+function rot13(message){
 
-function solution(string) {
-    var uppercasedString = string.toUpperCase();
-    let breakName = "";
+  var rot13 = "";
 
-    for(let i =0;i<string.length;i++){
-      breakName+= string[i];
-      if(string[i + 1] == uppercasedString[i + 1]){
-       breakName += " " ; 
+  for(let i =0; i<message.length;i++){
+
+
+    for(let j = 0; j<letters.length ;j++){
+      var holder = 0;
+      if(message[i] == " " || Number.isInteger(Number(message[i])) || message[i] == "+" || message[i] == "." || message[i] == "!"){
+        rot13 += message[i];
+        break;
       }
+     
+      if(message[i].toLowerCase() == letters[j].toLowerCase() ){
+        var pos = letters.indexOf(letters[j])
+      
+      if((pos + 13) >= 26 ){
+        holder += (pos + 13) - 26;
+      }else{
+        holder += pos + 13;
+      }
+
+      if(message[i] == letters[j]){
+        rot13 += letters[holder].toUpperCase();
+      }else{
+        rot13 += letters[holder].toLowerCase();
+      }
+     
+      holder = 0 ;
+      } 
     }
-return breakName.trim();
+  }
+
+ console.log(rot13);
+
 }
 
 
-solution("jerCarloCatallo");
+rot13("10+2 is twelve.");
 
 
 
