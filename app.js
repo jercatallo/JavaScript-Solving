@@ -1,52 +1,43 @@
-//Rot13
+//Triangle Pattern
 
-//Problem Link - https://www.codewars.com/kata/530e15517bc88ac656000716/train/javascript
-
-var letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+//Problem Link - 
 
 
-function rot13(message){
-
-  var rot13 = "";
-
-  for(let i =0; i<message.length;i++){
+let count = 0;
+let space = "&nbsp";
+let kam = 0;
 
 
-    for(let j = 0; j<letters.length ;j++){
-      var holder = 0;
-      if(message[i] == " " || Number.isInteger(Number(message[i])) || message[i] == "+" || message[i] == "." || message[i] == "!"){
-        rot13 += message[i];
-        break;
+
+for(let i =1; i<=9;i++){
+
+  for(let j=0;j<i;j++){
+
+    for(let z= 9;z >i;z--){
+      if(j % 2 == 0 && j < 2){
+        document.write(space);
       }
-     
-      if(message[i].toLowerCase() == letters[j].toLowerCase() ){
-        var pos = letters.indexOf(letters[j])
-      
-      if((pos + 13) >= 26 ){
-        holder += (pos + 13) - 26;
-      }else{
-        holder += pos + 13;
-      }
-
-      if(message[i] == letters[j]){
-        rot13 += letters[holder].toUpperCase();
-      }else{
-        rot13 += letters[holder].toLowerCase();
-      }
-     
-      holder = 0 ;
-      } 
     }
+
+   document.write(count += 1);
+   
+
+   
+   
+
+
+
+
+
+
+   
+   if(count == 9){
+    count = 0;
+  }
   }
 
- console.log(rot13);
 
+
+  document.write("<br>")
+ 
 }
-
-
-rot13("10+2 is twelve.");
-
-
-
-
-
