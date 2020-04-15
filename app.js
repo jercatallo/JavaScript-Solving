@@ -1,43 +1,39 @@
-//Triangle Pattern
+//Validate my Password
 
-//Problem Link - 
-
-
-let count = 0;
-let space = "&nbsp";
-let kam = 0;
+//Problem Link -  https://www.codewars.com/kata/59c01248bf10a47bd1000046/train/javascript
 
 
+function validPass(password){
 
-for(let i =1; i<=9;i++){
+  var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+  let containNumber = false;
+  let containLetter = false;
+  let containSpecialcharacters = format.test(password);
+  let check = "";
 
-  for(let j=0;j<i;j++){
-
-    for(let z= 9;z >i;z--){
-      if(j % 2 == 0 && j < 2){
-        document.write(space);
+//Check if it contains special character
+  if(containSpecialcharacters == false){
+    if(password.length > 3 && password.length <20){
+      //Check if it contains Numbers and Letters
+      for(let i = 0;i<password.length;i++){
+        //Check if it is a number
+        if(!(isNaN(Number(password[i])))){
+          containNumber = true;
+        //Check if it is a letter or string
+        }else if(typeof password[i] == "string"){
+          containLetter = true;
+        } 
       }
+  (containNumber == true && containLetter == true ?  check += "VALID" : check += "INVALID")
+    }else{
+      check += "INVALID";
     }
-
-   document.write(count += 1);
-   
-
-   
-   
-
-
-
-
-
-
-   
-   if(count == 9){
-    count = 0;
-  }
+  }else{
+    check += "INVALID";
   }
 
-
-
-  document.write("<br>")
- 
+  return check;
 }
+
+
+validPass("jer4")
