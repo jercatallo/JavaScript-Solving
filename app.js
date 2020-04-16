@@ -1,39 +1,53 @@
-//Validate my Password
+// function palindromes(string){
 
-//Problem Link -  https://www.codewars.com/kata/59c01248bf10a47bd1000046/train/javascript
-
-
-function validPass(password){
-
-  var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-  let containNumber = false;
-  let containLetter = false;
-  let containSpecialcharacters = format.test(password);
-  let check = "";
-
-//Check if it contains special character
-  if(containSpecialcharacters == false){
-    if(password.length > 3 && password.length <20){
-      //Check if it contains Numbers and Letters
-      for(let i = 0;i<password.length;i++){
-        //Check if it is a number
-        if(!(isNaN(Number(password[i])))){
-          containNumber = true;
-        //Check if it is a letter or string
-        }else if(typeof password[i] == "string"){
-          containLetter = true;
-        } 
-      }
-  (containNumber == true && containLetter == true ?  check += "VALID" : check += "INVALID")
-    }else{
-      check += "INVALID";
-    }
-  }else{
-    check += "INVALID";
-  }
-
-  return check;
-}
+//   var newWord = "";
+//   var palindrome = [];
+//   var reversePalindrome = [];
+//   var allPalindrome = [];
 
 
-validPass("jer4")
+//   for(let i = 0;i<string.length;i++){
+//     newWord += string[i]
+//     palindrome.push(newWord);
+//   }
+
+
+//   for(let i = 0; i<palindrome.length;i++){
+//     var reverseWord = "";
+//     var reverse = "";
+
+//     for(let j = 0; j < i +1;j++){
+//         //to get the word in array element
+//         reverseWord += palindrome[i][j];
+//     }
+
+    
+//     for(let z = reverseWord.length -1; z >=0; z--){
+//       //to reverse the wordin array element
+//       reverse += reverseWord[z];
+//     }
+
+//     //to push the reverse word to new array
+//    reversePalindrome.push(reverse);
+
+
+//    //to set to default the word getters
+//     reverse = "";
+//     reverseWord = "";
+//   }
+
+//   for(let i = 1; i<palindrome.length;i++){
+//     if(palindrome[i] == reversePalindrome[i]){
+//       allPalindrome.push(palindrome[i]);
+//     }
+//   }
+
+//   document.write(allPalindrome)
+//   console.log(palindrome)
+//   console.log(reversePalindrome)
+// }
+
+
+
+
+// palindromes("abaaabaa ");
