@@ -1,6 +1,12 @@
-var laLigaGoals
-var championsLeagueGoals
-var copaDelReyGoals
+function greet(name) {
+    if(name != null && name != ""){
+        return "hello " +name+"!";
+    }else{
+        return null
+    }
+   
+}
 
-var totalGoals += 0 + laLigaGoals + championsLeagueGoals + copaDelReyGoals;
 
+
+greet("Niks");
