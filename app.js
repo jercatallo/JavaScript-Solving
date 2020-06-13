@@ -1,17 +1,15 @@
-var greet = function(name) {
-var newName ="";
-
-  for(let i=0; i<name.length;i++){
-      if(i ==0){
-        newName += name[i].toUpperCase();
-      }else{
-        newName += name[i];
-      }
-   
-  }
-
-  console.log("Hello" + newName +"!")
-};
+function largestPairSum(numbers)
+{
+  var num = numbers.sort(function(a,b){return a-b});
+  console.log(num)
+ 
+    console.log(num[num.length-1] + num[num.length-2])
+  
 
 
-greet("billy")
+}
+
+
+
+
+largestPairSum([-10, -14, -2, -23, -19])
