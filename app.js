@@ -1,23 +1,17 @@
-function modifiedSum(a, n) {
-    
-var sum = 0;
+var greet = function(name) {
+var newName ="";
+
+  for(let i=0; i<name.length;i++){
+      if(i ==0){
+        newName += name[i].toUpperCase();
+      }else{
+        newName += name[i];
+      }
+   
+  }
+
+  console.log("Hello" + newName +"!")
+};
 
 
-        for(let i=0;i<n;i++){
-            
-            for(let j =0;j<n;j++){
-
-            }
-        }
- 
-
-}
-
-
-
-
-
-
-
-
-  modifiedSum([1,2,3],3)
+greet("billy")
