@@ -1,60 +1,30 @@
-function encode(string) {
-  var encoded = "";
-  for(let i =0; i <string.length;i++){
-    switch(string[i]){
-      case 'a' || 'A':
-        encoded += '1';
-        break;
-        case 'e' || 'E':
-          encoded += '2';
-          break;
-          case 'i' || 'I':
-            encoded += '3';
-            break;
-            case 'o' || 'O':
-              encoded += '4';
-              break;
-              case 'u' || 'U':
-                encoded += '5';
-                break;
-                default:
-                  encoded += string[i];
+function capitalize(s){
+var capitalize = [];
+var evenCap = "";
+var oddCap = "";
+
+  for(let i =0;i<s.length;i++){
+    if(i % 2 == 0){
+      evenCap += s[i].toUpperCase();
+    }else{
+      evenCap += s[i];
     }
   }
-  return encoded;
-  
 
-}
-
-function decode(string) {
-  var decoded = "";
-  for(let i =0; i <string.length ;i++){
-    switch(string[i]){
-      case '1':
-        decoded += 'a';
-        break;
-        case '2':
-          decoded += 'e';
-          break;
-          case '3':
-            decoded += 'i';
-            break;
-            case '4':
-              decoded += 'o';
-              break;
-              case '5':
-                decoded += 'u';
-                break;
-                default:
-                  decoded += string[i];
+  for(let i =0;i<s.length;i++){
+    if(i % 2 >= 1){
+      oddCap += s[i].toUpperCase();
+    }else{
+      oddCap += s[i];
     }
   }
- return decoded;
-}
+
+  capitalize.push(evenCap,oddCap);
+
+
+   return capitalize;
+};
 
 
 
-
-
-encode("hello");
-decode("h2ll4")
+capitalize("abcdef");
