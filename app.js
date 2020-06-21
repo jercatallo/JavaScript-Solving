@@ -21,7 +21,7 @@ function encode(string) {
                   encoded += string[i];
     }
   }
-  console.log(encoded)
+  return encoded;
   
 
 }
@@ -49,7 +49,7 @@ function decode(string) {
                   decoded += string[i];
     }
   }
-  console.log(decoded)
+ return decoded;
 }
 
 
