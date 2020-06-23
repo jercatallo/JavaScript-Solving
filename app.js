@@ -1,20 +1,37 @@
-var twoSum = function(nums, target) {
-    targets = 9;
-    numss = [2, 7, 11, 15];
-
-    for(let i =0; i<numss.length;i++){
-     
-      for (let j = 0; j<numss.length ;j++){
-        if(i != j){
-        if(numss[i] + numss[j] == targets){
-          console.log([i,j]);
-        }
-      }
-      }
-    }
+var addTwoNumbers = function(l1, l2) {
     
+  var num1 = "";
+  var num2 = "";
+
+  
+
+  for(let i = l1.length -1; i >=0;i--){
+    num1 += l1[i];
+  }
+
+  for(let i = l2.length -1; i >=0;i--){
+    num2 += l2[i];
+  }
+
+  var output = Number(num1) + Number(num2) + "";
+  var final = [];
+
+ 
+  for(let i = output.length -1; i >=0;i--){
+  
+
+    final.push(Number(output[i]));
+  }
+  
+
+  return final;
+  
 };
 
 
 
-twoSum();
+
+
+
+
+addTwoNumbers([2,4,3],[5,6,4])
